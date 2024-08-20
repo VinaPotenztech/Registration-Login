@@ -1,128 +1,188 @@
 /* General body styling */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif; /* Modern font */
+    background-color: #e9ecef; /* Light background for a softer look */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    flex-direction: column; /* Aligns content vertically centered */
+    flex-direction: column;
+}
+/* Form container styling */
+.form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto;
+    border: 2px solid #007bff; /* Border color and thickness */
+    border-image: linear-gradient(135deg, #007bff, #00d2ff); /* Gradient border */
+    border-image-slice: 1; /* Ensures the gradient applies correctly */
+}
+
+/* Form container hover effect */
+.form-container:hover {
+    border-image: linear-gradient(135deg, #00d2ff, #007bff); /* Change gradient direction on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
 }
 
 /* Container for consistent width and centering */
 .container {
-    width: 80%;
-    max-width: 1200px; /* Max width for larger screens */
+    width: 90%;
+    max-width: 1200px;
     margin: auto;
     overflow: hidden;
 }
 
 /* Header styling */
 header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
+    background: #343a40; /* Darker background */
+    color: #f8f9fa; /* Light text color for contrast */
+    padding: 20px;
     width: 100%;
     text-align: center;
-    border-bottom: 3px solid #fff;
+    border-bottom: 4px solid #007bff; /* Accent border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for modern effect */
 }
 
 /* Header links styling */
 header a {
-    color: #fff;
+    color: #f8f9fa;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 16px;
-    margin: 0 15px;
+    font-size: 14px;
+    margin: 0 20px;
     display: inline-block;
-    line-height: 40px; /* Center text vertically */
+    line-height: 40px;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 /* Header links hover effect */
 header a:hover {
-    text-decoration: underline;
+    color: #007bff; /* Primary color for hover */
 }
 
 /* Main content styling */
 .main-content {
     padding: 20px;
-    text-align: center; /* Center text in the main content */
+    text-align: center;
 }
 
 /* Button styling */
 .btn {
-    background-color: #0056b3;
+    background-color: #007bff; /* Primary color */
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px; /* Larger padding */
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 10px 2px;
+    margin: 10px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+    border-radius: 6px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
 }
 
 /* Button hover effect */
 .btn:hover {
-    background-color: #004494;
+    background-color: #0056b3;
+    transform: scale(1.05); /* Slightly scale button on hover */
 }
 
 /* Styling for headings and paragraphs */
+/* Styling for headings */
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #0056b3;
+    font-size: 28px; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold text for prominence */
+    color: #007bff; /* Primary color for a fresh look */
+    text-align: center; /* Center-align heading */
+    margin-bottom: 20px; /* Space below the heading */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    line-height: 1.2; /* Better spacing between lines */
+    font-family: 'Arial', sans-serif; /* Consistent font family */
 }
 
+
 p {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 18px; /* Slightly larger paragraph text */
+    line-height: 1.8;
+    color: #495057; /* Dark gray for better readability */
 }
 
 /* Styles for form inputs */
 input[type="text"], input[type="email"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: auto; /* Allows input to adjust based on content */
+    max-width: 400px; /* Sets a maximum width */
+    padding: 12px; /* Adjust padding for better readability */
+    margin: 10px auto; /* Centers inputs horizontally and adds vertical spacing */
+    border: 1px solid #ced4da;
+    border-radius: 6px; /* Rounded corners for modern look */
+    font-size: 16px; /* Larger font size for better readability */
+    display: block; /* Ensures block-level element behavior */
 }
 
 /* Focus state for form inputs */
 input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-    border-color: #0056b3;
-    outline: none;
+    border-color: #007bff; /* Change border color on focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Shadow effect on focus */
+    outline: none; /* Removes default focus outline */
 }
+
 
 /* Styling for buttons in forms */
 button {
-    background-color: #0056b3;
+    background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 12px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 16px;
     width: 100%;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Button hover effect in forms */
 button:hover {
-    background-color: #004494;
+    background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Form container styling */
 .form-container {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Softer shadow */
     max-width: 400px;
     width: 100%;
-    margin: 20px auto; /* Center form container */
+    margin: 20px auto;
+    border: 1px solid #dee2e6; /* Subtle border */
+}
+/* Button styling */
+.btn {
+    background-color: #007bff; /* Primary color */
+    color: #fff;
+    border: none;
+    padding: 12px 24px; /* Adjust padding as needed */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px auto; /* Center button horizontally */
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: auto; /* Allows button width to adjust to content */
+    max-width: 200px; /* Set a maximum width to prevent button from becoming too wide */
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
 }

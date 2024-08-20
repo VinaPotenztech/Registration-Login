@@ -88,7 +88,7 @@ app.get('/profile', async (req, res) => {
 // Update profile route
 app.put('/update-profile', async (req, res) => {
   try {
-    const { email, password, country } = req.body;
+    const { firstname,lastname,email, password, country } = req.body;
     const userId = req.cookies.userId;
 
     if (!userId) {
@@ -99,7 +99,7 @@ app.put('/update-profile', async (req, res) => {
       return res.status(400).json({ message: 'Invalid User ID format' });
     }
 
-    const updatedUser = await User.findByIdAndUpdate(userId, { email, password, country }, { new: true });
+    const updatedUser = await User.findByIdAndUpdate(userId, { firstname,lastname,email, password, country }, { new: true });
 
     if (!updatedUser) {
       return res.status(404).json({ message: 'User not found' });

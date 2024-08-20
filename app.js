@@ -112,11 +112,48 @@ app.put('/update-profile', async (req, res) => {
   }
 });
 
+//change password
+const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+app.post('/change-password',async(req,res)=>{
+  try {
+    const {currentPassword,newPassword}=req.body;
+    const userId=req.cookies.userId;
+
+
+     // Validate new password
+     if (!passwordRegex.test(newPassword)) {
+      return res.status(400).json({
+        message: 'New password must be at least 8 characters long, include at least 1 letter, 1 number, and 1 special character.'
+      });
+    }
+
+    if(!userId){
+      return res.status(400)._construct({message:'User ID is required'});
+    }
+    if(!mongoose.Types.ObjectId.isValid(userId)){
+      return res.status(400).json({message:'Invalid User ID format'});
+    }
+
+    const user=await User.findById(userId);
+    if(!user || user.password !== currentPassword){
+      return res.status(400).json({message:'Current password is incorrect'});
+    }
+
+    user.password=newPassword;
+
+    await user.save();
+    res.json({message:"Password updated successfully"});
+  } catch (error) {
+    console.error('Error updating password',error);
+    res.status(500).json({message:'Error updating password',error:error.message});    
+  }
+})
 // Logout route
 app.get('/logout', (req, res) => {
   res.clearCookie('userId');
   res.redirect('home.html');
 });
 
-const PORT = 1515;
+const PORT = 3000
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

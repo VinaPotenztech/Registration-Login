@@ -1,55 +1,128 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column; /* Aligns content vertically centered */
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+/* Container for consistent width and centering */
+.container {
+    width: 80%;
+    max-width: 1200px; /* Max width for larger screens */
+    margin: auto;
+    overflow: hidden;
+}
 
-        .form-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
+/* Header styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #fff;
+}
 
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #0056b3;
-        }
+/* Header links styling */
+header a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 15px;
+    display: inline-block;
+    line-height: 40px; /* Center text vertically */
+}
 
-        input[type="text"], input[type="email"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+/* Header links hover effect */
+header a:hover {
+    text-decoration: underline;
+}
 
-        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
-            border-color: #0056b3;
-            outline: none;
-        }
+/* Main content styling */
+.main-content {
+    padding: 20px;
+    text-align: center; /* Center text in the main content */
+}
 
-        button {
-            background-color: #0056b3;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            transition: background-color 0.3s ease;
-        }
+/* Button styling */
+.btn {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
 
-        button:hover {
-            background-color: #004494;
-        }
-        
+/* Button hover effect */
+.btn:hover {
+    background-color: #004494;
+}
+
+/* Styling for headings and paragraphs */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Styles for form inputs */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Focus state for form inputs */
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+/* Styling for buttons in forms */
+button {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover effect in forms */
+button:hover {
+    background-color: #004494;
+}
+
+/* Form container styling */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto; /* Center form container */
+}

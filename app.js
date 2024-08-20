@@ -115,7 +115,7 @@ app.put('/update-profile', async (req, res) => {
 // Logout route
 app.get('/logout', (req, res) => {
   res.clearCookie('userId');
-  res.redirect('login.html');
+  res.redirect('home.html');
 });
 
 const PORT = 1515;

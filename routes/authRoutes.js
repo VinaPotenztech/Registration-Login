@@ -1,6 +1,23 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/model');
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
+// Configure Nodemailer (for Gmail)
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'your-email@gmail.com',
+        pass: 'your-email-password'
+    }
+});
+
+// Serve login page with forgot password link
+router.get('/', (req, res) => {
+    res.sendFile(__dirname + '/../public/index.html');
+});
+
 
 // Sign-up route
 router.post('/sign-up', async (req, res) => {

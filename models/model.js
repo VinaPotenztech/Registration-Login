@@ -6,7 +6,11 @@ const userSchema = new Schema({
   lastname: String,
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  country: String
+  country: String,
+  resetToken: { type: String, default: null },
+  resetTokenExpires:{type:Date,default:null}
+  // New field for reset token
+
 });
 
 const User = mongoose.model('User', userSchema);

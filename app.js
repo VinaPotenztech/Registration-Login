@@ -5,10 +5,13 @@ const cookieParser = require('cookie-parser');
 const User = require('./models/model'); 
 const authRoute=require('./routes/authRoutes');
 const userRoutes=require('./routes/userRoutes')
+const passwordRoutes=require('./routes/passwordRoutes')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+
 app.use(express.static('public'));
 
 // Connect to MongoDB
@@ -23,6 +26,12 @@ mongoose.connect('mongodb://localhost:27017/Form', {
 app.get('/', (req, res) => {
   res.redirect('home.html');
 });
+
+app.get('/forgot-password', (req, res) => {
+  res.sendFile(__dirname + '/public/forgot-password.html');
+});
+app.use('/', passwordRoutes);
+
 
 app.use('/', authRoute);
 app.use('/', userRoutes);

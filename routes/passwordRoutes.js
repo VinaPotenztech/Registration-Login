@@ -1,6 +1,5 @@
 // routes/passwordRoutes.js
 const express = require('express');
-const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 const User = require('../models/model');
 const path = require('path');
@@ -78,8 +77,7 @@ router.post('/reset-password', async (req, res) => {
         });
 
         if (user) {
-            const hashedPassword = bcrypt.hashSync(password, 8);
-            user.password = hashedPassword;
+            user.password = password; // Directly set the plain text password
             user.resetToken = null;  // Clear the reset token
             user.resetTokenExpires = null;  // Clear the token expiry
             await user.save();
